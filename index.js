@@ -129,8 +129,8 @@ let sr = svgRect(0,0,svgElm.clientWidth,svgElm.clientHeight);
 svgElm.innerHTML= sr+ svgCircle(40, 40, 30) + svgCircle(60, 60, 20) + s +s1 ;
 
 //let c = makeCoord(10, 20,30);
-let c = mcGetCoordDeg(10, 20, 5, 7, 30);
-console.log(c);
+//let c = mcGetCoordDeg(10, 20, 5, 7, 30);
+//console.log(c);
 
 
 const message = document.getElementById('message');
