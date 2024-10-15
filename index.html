@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SVG lib test</title>
-    <meta charset="UTF-8" />
-    <style>
-      circle {
-        fill: none;
-        stroke:green;
-        stroke-width:2;
-      }
-      polyline {
-        fill: none;
-        stroke:red;
-        stroke-width:2;
-      }
-    </style>
-      </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimum Curvature Method</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
 
   <body>
-    <label for="message">Your message:</label>
-    <textarea id="message" name="message" rows="5" cols="33"></textarea>
-    <p ID="Label1"></p>
-    <br>
-    
-    <button>AAAA</button>
+    <div class="header">
+      <div class="section">
+        <a class="home" href="index.html"><img class="home-icon" src="files/icon/icons8-home-50.png"></a>
+        <!-- <a class="help" href="help.html">Help</a> -->
+        <a class="about" href="VBAFunctions.html">VBA Functions</a>
+      </div>
+    </div>
+    <div>
+      <h1 class="title">Minimum Curvature Method</h1>
+      <div id="main" class="main">
+        <div>
+          <p>You can download the Excel file with the VBA functions here:</p>
+        </div>
+        <a href="files/mcExample-01.xlsx" download  id="excel" class="excel">mcExample-01.xlsm</a>
+        <h3>Overview</h3>
+        <p>
+          This Excel file demonstrates how to: 
+          <li>
+          Calculate well Directional Survey using Minimum Curvature Method 
+        </li>
+        <li>Interpolate values when either the Measured Depth (MD) value or True Vertical Depth (TVD) is known.</li>
+          
+ <br>
+        </p>
+        <p>
+          <a class="vba-link" href="VBAFunctions.html">VBA functions</a> are stored in this workbook. Macro should be enabled for calculation. <br> <br>
+          These functions can be used like regular Excel functions, you can copy and paste formulas between cells. <br> <br>
+          <br>Example:
+        </p>
+        <img class="pic1" src="files/images/example table.jpg">
 
-    <br>
-    <svg width="1500" height="500" class="js-svg1">
-      <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />      
-      <circle cx="40" cy="40" r="30" stroke="red" stroke-width="4" fill="yellow" />
-    </svg>  
-
-    <svg width="100" height="100">
-      <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />      
-      <circle cx="40" cy="40" r="30" stroke="red" stroke-width="4" fill="yellow" />
-    </svg>  
-    
-    
-    <script src="index.js"></script>
-    
+        <p><b>This Excel file provided as is, used as your own risk!</b></p>
+      </div>
+    </div>
+    <p class="author">Tran Tuan Lam - October 2024</p>
+    <script src="script.js"></script>
   </body>
-
 </html>

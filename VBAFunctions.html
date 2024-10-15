@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimum Curvature Method</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="section">
+        <a class="home" href="index.html"><img class="home-icon" src="files/icon/icons8-home-50.png"></a>
+        
+        <!-- <a class="help" href="help.html">Help</a> -->
+        <a class="about" href="VBAFunctions.html">VBA Functions</a>
+      </div>
+    </div>
+    <p>
+      The minimum curvature method is used to write VBA code in excel .xlsm file for survey calculation. <br> <br>
+      User-defined functions starting with prefix "mc" are intended to be used in excel sheets. <br> <br>
+      Here are the functions included in the Excel file.
+    </p>
+    <div>
+      
+      <p style="font-size: 1.5rem;">
+        <b>
+        Minimum curvature method Functions        
+      </b>
+      </p>  
+        
+      
+      <table class="functions">
+        <tr>
+          <th  style="width:30%" ;>Function</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td class="courier">mcVertial(I1, I2, A1, A2, DL)</td>
+          <td>Calculate the TVD</td>
+        </tr>
+        <tr>
+          <td class="courier">mcEast(I1, I2, A1, A2, DL) </td>
+          <td>Calculate the Easting</td>
+        </tr>
+        <tr>
+          <td class="courier">mcNorth(I1, I2, A1, A2, DL)
+          </td>
+          <td>Calculate the Northing</td>
+        </tr>
+        <tr>
+          <td class="courier">DLS30Deg(I1, I2, DeltaAz, DL)</td>
+          <td>Calculate Dogleg for 30 length units</td>
+        </tr>
+        <tr>
+          <td class="courier">DLS100Deg(I1, I2, DeltaAz, DL)</td>
+          <td>Calculate Dogleg for 100 length units</td>
+        </tr>
+      </table>
+    </div>
+    <p>
+      Where:
+    </p>
+    <ul>
+      <li><span class=courier>I1</span>: Incination 1 (degrees) of survey station 1</li>
+      <li><span class=courier>I2</span>: Incination 2 (degrees) of survey station 2</li>
+      <li><span class=courier>A1</span>: Aziimuth 1 (degrees) of survey station 1</li>
+      <li><span class=courier>A2</span>: Aziimuth 2 (degrees) of survey station 2</li>
+      <li>
+        <span class=courier>DL = MD2 - MD1</span> - Course length <br>
+        <span class=courier>MD1</span>: Measured Depth of survey station 1 <br>
+          <span class=courier>MD2</span>: Measured Depth of survey station 2<br>
+      The length unit is determined by the input unit (meter or foot)</li>
+  </ul>
+<BR>
+    <p >REFERENCE:</p>    
+        
+    <p>1. Dr. Bill Mitchell Advance Oilwell Drilling Engineering Handbook 10th Edition, 1st revision July 1995 </p>
+    <p>
+    2. Adam.T. Bourgoyne Jr, Keith.K. Millheim, Martin.E. Chenevert and F.S. Young Jr 
+    Applied Drilling Engineering 1991 </p>
+    
+    <p>3. Sawaryn, S.J. and Thorogood, J.L. 2005. A Compendium of Directional Calculations Based on the Minimum Curvature Method. SPE Drilling & Completion 20 (1): 24-36. SPE-84246-PA.<a class="ref" href="https://doi.org/10.2118/84246-PA">https://doi.org/10.2118/84246-PA</a></p>
+    <p>4. Gilles Gabolde, Jean-Paul Nguyen Drilling Data Handbook Eighth Edition 2006 </p>
+    <p>5. <a class="ref" href="https://www.drillingformulas.com/minimum-curvature-method/">https://www.drillingformulas.com/minimum-curvature-method/</a> </p>
+    <br><br> 
+
+    <p style="font-size: 1.5rem;">
+      <b>Interpolation Functions</b>
+    </p>
+
+    <p>
+      These functions will scan the first column of <span class=courier> SurveyRange</span> downward until they encounter an empty row. They will then recalculate the survey data and interpolate the required parameters based on the given TVD or TD in the middle point. <br><br>
+
+    <span class=courier>SurveyRange</span> requires a data range that is a survey table with a predefined format for calculation. The survey table must contain at least 6 columns: MD, Inclination, Azimuth, TVD, North, and East, so that the interpolation functions can operate correctly. The table's final row must be left empty to indicate the end of the chosen data array.<br><br>
+    
+    Even if only the top-left cell is provided, the functions will scan downward to obtain survey data from a wider range.
+  </p>
+
+
+    <img class="pic1-about" src="files/images/empty row.jpg">
+
+    <p>
+      Functions take 2 parameters: <br> <br>
+       - First parameter <span class=courier>  SurveyRange </span>is the survey table which starts from top left cell of the range.
+       <br> <br>
+      - Second parameter <span class=courier>(MD/TVD)</span> is Measured Depth/True Vertical Depth which it needs to be mapped from.
+    </p>
+
+    <br>
+    
+    <p style="font-size: 1.5rem;">
+      <b>Interpolation Functions from MD</b>
+    </p>
+
+    <table class="functions">
+      <tr>
+        <th style="width:35%">Function</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td class="courier">mcGetInclinationfromMD(SurveyRange, MD)</td>
+        <td>Calculate inclination from MD</td>
+      </tr>
+      <tr>
+        <td class="courier">mcGetAzimuthfromMD(SurveyRange, MD)</td>
+        <td>Calculate Azimuth from MD</td>
+      </tr>
+      <tr>
+        <td class="courier">mcGetTVDfromMD(SurveyRange, MD)</td>
+        <td>Calculate TVD from MD</td>
+      </tr>
+      <tr>
+        <td class="courier">mcGetEastfromMD(SurveyRange, MD)</td>
+        <td>Calculate Eastthing from MD </td>
+      </tr>
+      <tr>
+        <td class="courier">mcGetNorthfromMD(SurveyRange, MD)</td>
+        <td>Calculate Northhing from MD</td>
+      </tr>
+      <tr>
+        <td class="courier">mcGetDLS100fromMD(SurveyRange, MD)</td>
+        <td>Calculate DLS 100 from MD</td>
+      </tr>
+      <tr>
+        <td class="courier">mcGetDLS30fromMD(SurveyRange, MD)</td>
+        <td>Calculate DLS 30 from MD</td>
+      </tr>
+    </table>
+
+    <br><br>
+
+
+    <p style="font-size: 1.5rem;">
+      <b>Interpolation Functions from TVD</b>
+    </p>
+
+      
+    <table class="functions">
+      <tr>
+        <th style="width:35%" >Function</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td class="courier"> mcGetInclinationfromTVD(SurveyRange, aTVD)</td>
+        <td>Calculate inclination from TVD</td>
+      </tr>
+      <tr>
+        <td class="courier">mcGetAzimuthfromTVD(SurveyRange, aTVD)</td>
+        <td>Calculate Azimuth from TVD</td>
+      </tr>
+      <tr>
+        <td class="courier"> mcGetMDfromTVD(SurveyRange, aTVD)</td>
+        <td>Calculate MD from TVD</td>
+      </tr>
+      <tr>
+        <td class="courier">mcGetEastfromTVD(SurveyRange, aTVD)</td>
+        <td>Calculate Eastthing from TVD </td>
+      </tr>
+      <tr>
+        <td class="courier">mcGetNorthfromTVD(SurveyRange, aTVD)</td>
+        <td>Calculate Northhing from TVD</td>
+      </tr>
+      <tr>
+        <td class="courier"> mcGetDLS100fromTVD(SurveyRange, aTVD)</td>
+        <td>Calculate DLS 100 from TVD</td>
+      </tr>
+      <tr>
+        <td class="courier">mcGetDLS30fromTVD(SurveyRange, aTVD)</td>
+        <td>Calculate DLS 30 from TVD</td>
+      </tr>
+    </table>
+    <br><br>
+    <p>
+      <b>Other examples of using interpolation functions:</b>
+    </p>
+
+    <img class="pic2-about" src="files/images/example2.jpg">
+
+    <p class="author">Tran Tuan Lam - 2024</p>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.rem;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+
+}
+
+li{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;  
+}
+h2, h3, h4, h5 {
+  font-size: 1.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.section, .excel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+a {
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+.pic1, .pic3 {
+  max-width: 60%;
+}
+
+.pic2 {
+  max-width: 60%;
+}
+
+.sidenote{
+  text-align: center;
+}
+
+.warning {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.author {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+table {
+  font-size: 1.2rem;
+  border-collapse: collapse;
+  width: 100%; 
+
+}
+
+td, th {
+  border: 2px solid #000000;
+  /* border-bottom: 2px solid #000000; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif; 
+  font-size: 1.0rem;
+  
+  max-width: 50%;
+  text-align: left;
+  padding: 8px;
+}
+
+/* td:last-child, th:last-child {
+  border-right: none;
+} */
+
+
+.pic1-about {
+  max-width: 60%;
+}
+
+.pic2-about {
+  max-width: 80%;
+}
+
+ul {
+  font-size: 1rem;
+}
+
+.ref {
+  font-size: 1rem;
+  margin-left: 5px;
+}
+
+.vba-link {
+  font-size: 1rem;
+  margin-left: 0;
+}
+
+.home-icon {
+  max-width: 1em;
+  align-items: center;
+}
+
+.courier{
+  font-family: monospace;
+  font-size: 1.1rem;
+}
