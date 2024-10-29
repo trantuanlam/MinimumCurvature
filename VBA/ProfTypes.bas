@@ -84,7 +84,7 @@ Function stdProfToRangeMap(ByVal i As Integer) As TRProfToRangeMap
                 .iTVD = 4
                 .iNorth = 5
                 .iEast = 6
-                .iDLS100 = 7
+                '.iDLS100 = 7 '2024-10-19 removed so that non-number in this column does not impact reading - otherwise interpolation functions will not work because of reading number error.
             Case Else
                 Err.Raise vbObjectError + 1, "stdProfToRangeMap", "Tham so ham khong hop le", " ", 0
         End Select
